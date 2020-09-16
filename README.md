@@ -3,6 +3,8 @@ Basic shopping cart example.
 
 ## Project setup
 
+* `npm install` - to install dependencies (in root folder)
+
 NPM commands
 
 * `npm run serve` - hot-reloads for development.

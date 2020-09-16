@@ -31,15 +31,15 @@ export default {
   },
   data: () => ({
     products: [
-      { name: 'Caja de frutas', price: 1200 },
-      { name: 'Tabla de quesos', price: 10700 },
-      { name: 'Pizza congelada', price: 5200 },
-      { name: 'Pack bebidas', price: 3900 },
-      { name: 'Ensalada surtida', price: 1200 },
-      { name: 'Mantel floreado', price: 2300 },
-      { name: 'Cuchillos filosos', price: 12500 },
-      { name: 'Delantal de cocina', price: 2500 },
-      { name: 'Vasos de picnic', price: 2300 },
+      { name: 'Caja de frutas', price: 1200, qty: 1 },
+      { name: 'Tabla de quesos', price: 10700, qty: 1 },
+      { name: 'Pizza congelada', price: 5200, qty: 1 },
+      { name: 'Pack bebidas', price: 3900, qty: 1 },
+      { name: 'Ensalada surtida', price: 1200, qty: 1 },
+      { name: 'Mantel floreado', price: 2300, qty: 1 },
+      { name: 'Cuchillos filosos', price: 12500, qty: 1 },
+      { name: 'Delantal de cocina', price: 2500, qty: 1 },
+      { name: 'Vasos de picnic', price: 2300, qty: 1 },
     ],
     cart: {
       items: [],
@@ -48,7 +48,12 @@ export default {
   }),
   methods: {
     addToCart(item){
-      this.cart.items.push(item)
+      let target = this.cart.items.find(p => p.name == item.name)
+      if(target){
+        target.qty += 1
+      } else{
+        this.cart.items.push(item)
+      }
       this.cart.total += item.price
     },
     emptyCart() {

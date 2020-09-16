@@ -12,8 +12,8 @@
         <v-list v-if="cart.items.length!=0">
           <v-list-item v-for="(i, index) in cart.items" :key="index" class="py-0" two-line>
             <v-list-item-content>
-              <v-list-item-title class="text-body-2 font-weight-medium">{{i.name}} <span class="text-caption"></span></v-list-item-title>
-              <v-list-item-subtitle>${{i.price}}</v-list-item-subtitle>
+              <v-list-item-title class="text-body-2 font-weight-medium">{{i.qty}}x {{i.name}} <span class="text-caption"></span></v-list-item-title>
+              <v-list-item-subtitle>${{i.price * i.qty}}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
           <v-list-item class="text-right">
