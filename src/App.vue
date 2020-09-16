@@ -1,17 +1,17 @@
 <template>
   <v-app>
-    <nav-bar></nav-bar>
+    <nav-bar :cart='cart' @empty-cart="emptyCart"></nav-bar>
     <v-main class="my-10">
       <v-container>
         <p class="text-h5 text-center font-weight-medium mt-3">Productos disponibles</p>
-        <v-card flat class="my-8" v-for="(product, index) in products" :key="index">
-          <v-row>
-            <v-col cols="12" md="10">
-              <p class="text-h5 black--text">{{product.name}} <span class="mx-3 text-body-1">{{product.price}}</span></p>
+        <v-card flat class="my-2" v-for="(product, index) in products" :key="index">
+          <v-row no-gutters>
+            <v-col cols="10">
+              <p class="text-body-1 black--text ma-0">{{product.name}} <span class="mx-3 text-caption">$ {{product.price}}</span></p>
             </v-col>
-            <v-col cols="12" md="2" class="text-right">
-              <v-btn text color="deep-purple accent-4">
-                <span class="hidden-md-and-up mr-3">Agregar</span><v-icon>mdi-plus</v-icon>
+            <v-col cols="2" class="text-right">
+              <v-btn icon color="deep-purple accent-4" @click="addToCart(product)">
+                <v-icon small>mdi-plus</v-icon>
               </v-btn>
             </v-col>
           </v-row>
@@ -31,12 +31,26 @@ export default {
   },
   data: () => ({
     products: [
-      { name: 'Caja de frutas', price: "$1.200"},
-      { name: 'Tabla de quesos', price: "$10.700"},
-      { name: 'Pizza congelada', price: "$5.200"},
-      { name: 'Pack bebidas', price: "$3.900"},
-      { name: 'Ensalada surtida', price: "$1.200"},
-    ]
+      { name: 'Caja de frutas', price: 1200},
+      { name: 'Tabla de quesos', price: 10700},
+      { name: 'Pizza congelada', price: 5200},
+      { name: 'Pack bebidas', price: 3900},
+      { name: 'Ensalada surtida', price: 1200},
+    ],
+    cart: {
+      items: [],
+      total: null
+    }
   }),
+  methods: {
+    addToCart(item){
+      this.cart.items.push(item)
+      this.cart.total += item.price
+    },
+    emptyCart() {
+      this.cart.items = []
+      this.cart.total = null
+    },
+  }
 };
 </script>
