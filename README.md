@@ -1,24 +1,19 @@
 # carritodecompras
+Basic shopping cart example.
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+NPM commands
 
-### Compiles and minifies for production
-```
-npm run build
-```
+* `npm run serve` - hot-reloads for development.
+* `npm run build` - minifies for production.
+* `npm run deploy` - deploy to GitHub Pages.
 
-### Lints and fixes files
-```
-npm run lint
-```
+---
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This project was built with Vuetify.
+ 
+Deploy: [https://const-az.github.io/ShoppingCart/](https://const-az.github.io/ShoppingCart/ "Shopping cart deploy")
+GitHub Project: [https://github.com/const-az/ShoppingCart](https://github.com/const-az/ShoppingCart "Shopping cart project")
+
+---
