@@ -3,7 +3,7 @@
     <nav-bar :cart='cart' @empty-cart="emptyCart"></nav-bar>
     <v-main class="my-10">
       <v-container>
-        <p class="text-h5 text-center font-weight-medium mt-3">Productos disponibles</p>
+        <p class="text-h5 text-center font-weight-medium mt-3 mb-7">Productos disponibles</p>
         <v-card flat class="my-2" v-for="(product, index) in products" :key="index">
           <v-row no-gutters>
             <v-col cols="10">
@@ -31,11 +31,15 @@ export default {
   },
   data: () => ({
     products: [
-      { name: 'Caja de frutas', price: 1200},
-      { name: 'Tabla de quesos', price: 10700},
-      { name: 'Pizza congelada', price: 5200},
-      { name: 'Pack bebidas', price: 3900},
-      { name: 'Ensalada surtida', price: 1200},
+      { name: 'Caja de frutas', price: 1200 },
+      { name: 'Tabla de quesos', price: 10700 },
+      { name: 'Pizza congelada', price: 5200 },
+      { name: 'Pack bebidas', price: 3900 },
+      { name: 'Ensalada surtida', price: 1200 },
+      { name: 'Mantel floreado', price: 2300 },
+      { name: 'Cuchillos filosos', price: 12500 },
+      { name: 'Delantal de cocina', price: 2500 },
+      { name: 'Vasos de picnic', price: 2300 },
     ],
     cart: {
       items: [],

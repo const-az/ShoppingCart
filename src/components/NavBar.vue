@@ -1,10 +1,10 @@
 <template>
-  <v-app-bar color="transparent" dense flat absolute class="pa-2">
+  <v-app-bar color="transparent" dense flat absolute class="py-2">
     <v-spacer></v-spacer>
     <v-menu>
         <template v-slot:activator="{ on, attrs }">
-          <v-badge :content="cart.items.length" :value="cart.items.length" color="green" overlap class="pt-3">
-            <v-btn icon v-bind="attrs" v-on="on">
+          <v-badge :content="cart.items.length" :value="cart.items.length" color="deep-purple accent-4" overlap>
+            <v-btn fab depressed small color="transparent" v-bind="attrs" v-on="on">
               <v-icon color="deep-purple accent-4">mdi-cart-outline</v-icon>
             </v-btn>
           </v-badge>
